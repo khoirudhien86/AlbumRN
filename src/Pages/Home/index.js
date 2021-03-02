@@ -1,17 +1,17 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import { AlbumList } from '../../Components'
 
 const Home = () => {
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <View style={styles.textContainer}>
-                <Text>Testing</Text>
+                <Text style={{fontSize: 20, fontWeight: 'bold', color: '#FFA000'}}>Albums</Text>
             </View>
             <View style={styles.albumListContainer}>
                 <AlbumList />
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
@@ -25,7 +25,8 @@ const styles = StyleSheet.create({
       alignItems: 'center'
     },
     albumListContainer: {
-        marginTop: 15
+        marginTop: 15,
+        paddingBottom: 20
     }
 });
 
