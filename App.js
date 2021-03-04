@@ -1,9 +1,12 @@
 import React from 'react'
-import { Home } from './src/Pages'
+import { NavigationContainer } from '@react-navigation/native';
+import Router from './src/Router';
 
 const App = () => {
   return (
-    <Home />
+    <NavigationContainer>
+        <Router />
+    </NavigationContainer>
   )
 }
 
