@@ -31,7 +31,7 @@ const AlbumList = () => {
     };
     return (
         <View>
-            <Text>ini album list :</Text>
+            <Text style={{marginBottom: 15}}>ini album list :</Text>
             <FlatList
             data={user}
             renderItem={renderItem}

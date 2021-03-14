@@ -4,14 +4,14 @@ import { AlbumList } from '../../Components'
 
 const Home = () => {
     return (
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <View style={styles.textContainer}>
                 <Text style={{fontSize: 20, fontWeight: 'bold', color: '#FFA000'}}>Albums</Text>
             </View>
             <View style={styles.albumListContainer}>
                 <AlbumList />
             </View>
-        </ScrollView>
+        </View>
     )
 }
 

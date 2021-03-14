@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, Alert, ScrollView } from 'react-native'
 import * as firebase from 'firebase';
-import Modal from 'react-native-modal';
-
 
 const firebaseConfig = {
     apiKey: "AIzaSyDkA-w5hf8r9UTIKgxXkqwfZjeO6j8fnqc",
@@ -50,24 +48,20 @@ export class Daftar extends Component {
 
     render() {
         return (
-            <View>
+            <ScrollView>
                 <Text style={{fontSize: 40, color: "#7B1FA2", fontWeight: 'bold', textAlign: 'center',marginTop: 20}}>MYAPP</Text>
                 <TextInput 
                     style={{borderWidth: 1, borderColor: 'gray', margin: 20, height: 50, backgroundColor: 'gray', borderRadius: 20, color: 'white', paddingHorizontal: 20}}
                     onChangeText={(email) => this.setState({email})}
-                    // value={value}
                     placeholder="masukkan email anda"
                     placeholderTextColor="red"
                 />
-                {/* <Text>{value}</Text> */}
                 <TextInput 
                     style={{borderWidth: 1, borderColor: 'gray', margin: 20, height: 50, backgroundColor: 'gray', borderRadius: 20, color: 'white', paddingHorizontal: 20}}
                     onChangeText={(password) => this.setState({password})}
-                    // value={pasword}
                     placeholder="masukkan password anda"
                     placeholderTextColor="red"
                 />
-                {/* <Text>{pasword}</Text> */}
                 <View style={{alignItems: 'center'}}>
                     <TouchableOpacity onPress={() => this.Daftar(this.state.email, this.state.password)} style={{borderColor: 'red', borderWidth: 1, marginTop: 10, borderRadius: 15, backgroundColor: '#E64A19', width: 150}}>
                             <Text style={{padding: 10, textAlign: 'center', justifyContent: 'center', fontSize: 20, fontWeight: 'bold', color: 'purple', textTransform: 'uppercase'}}>DAFTAR</Text>
@@ -83,7 +77,7 @@ export class Daftar extends Component {
                     </TouchableOpacity>
                     </View>
                 </Modal> */}
-            </View>
+            </ScrollView>
         )
     }
 }
