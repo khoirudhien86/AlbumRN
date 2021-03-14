@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text, TextInput, TouchableOpacity, alert } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native'
 import * as firebase from 'firebase';
+import Modal from 'react-native-modal';
 
 
 const firebaseConfig = {
@@ -23,17 +24,24 @@ export class Daftar extends Component {
 
         this.state = ({
             email:'',
-            password:''
+            password:'',
         })
     }
 
     Daftar = (email,password) => {
         try {
             if(this.state.password.length<6){
-                alert("masukkan minimal 6 karakter");
+                Alert.alert("masukkan password minimal 6 karakter!");
                 return;
             }
             firebase.auth().createUserWithEmailAndPassword(email,password);
+            Alert.alert(
+                "Pendaftaran Berhasil",
+                "Silahkan Login!",
+                [
+                    { text: "OK", onPress: () => this.props.navigation.navigate('Login') }
+                ]
+            );
         }
         catch (error) {
             console.log(error.toString())
@@ -65,6 +73,16 @@ export class Daftar extends Component {
                             <Text style={{padding: 10, textAlign: 'center', justifyContent: 'center', fontSize: 20, fontWeight: 'bold', color: 'purple', textTransform: 'uppercase'}}>DAFTAR</Text>
                     </TouchableOpacity>
                 </View>
+
+
+                    {/* <Modal isVisible={this.state.isModalVisible} style={{alignItems: 'center'}}>
+                    <View style={{ width: 250, height: 200, backgroundColor: 'white',justifyContent: 'center', alignItems: 'center', paddingHorizontal: 30, borderRadius: 20 }}>
+                    <Text style={{fontSize: 18, fontWeight: 'bold'}}>Pendaftaran Berhasil, Silahkan Login!</Text>
+                    <TouchableOpacity style={{marginTop: 60}}>
+                        <Text style={{fontWeight: 'bold', fontSize: 20, backgroundColor: 'purple', padding: 9, borderRadius: 20}}>Login!</Text>
+                    </TouchableOpacity>
+                    </View>
+                </Modal> */}
             </View>
         )
     }
