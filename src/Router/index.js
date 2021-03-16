@@ -7,9 +7,9 @@ const Stack = createStackNavigator();
 const Router = () => {
     return(
         <Stack.Navigator initialRouteName="Auth">
-            <Stack.Screen name="Home" component={Home} />
-            <Stack.Screen name="Auth" component={Auth} />
-            <Stack.Screen name="Login" component={Login} />
+            {/* <Stack.Screen name="Home" component={Home} /> */}
+            {/* <Stack.Screen name="Auth" component={Auth} />
+            <Stack.Screen name="Login" component={Login} /> */}
             <Stack.Screen name="Daftar" component={Daftar} />
         </Stack.Navigator>
     );

@@ -48,23 +48,25 @@ export class Daftar extends Component {
 
     render() {
         return (
-            <ScrollView>
-                <Text style={{fontSize: 40, color: "#7B1FA2", fontWeight: 'bold', textAlign: 'center',marginTop: 20}}>MYAPP</Text>
+            <ScrollView style={{paddingHorizontal: 28, paddingTop: 25, backgroundColor: '#C4C4C4'}}>
+                <View style={{width: 29, height: 29, backgroundColor: 'pink'}}>
+                </View>
+                <Text style={{fontSize: 36, color: "#7B1FA2", fontWeight: 'bold', textAlign: 'center',marginTop: 60}}>Sign Up</Text>
                 <TextInput 
-                    style={{borderWidth: 1, borderColor: 'gray', margin: 20, height: 50, backgroundColor: 'gray', borderRadius: 20, color: 'white', paddingHorizontal: 20}}
+                    style={{borderWidth: 1, borderColor: 'gray', marginTop: 30, height: 50, backgroundColor: '#F5F4F2', borderRadius: 30, color: 'purple', paddingHorizontal: 20}}
                     onChangeText={(email) => this.setState({email})}
                     placeholder="masukkan email anda"
-                    placeholderTextColor="red"
+                    placeholderTextColor="gray"
                 />
                 <TextInput 
-                    style={{borderWidth: 1, borderColor: 'gray', margin: 20, height: 50, backgroundColor: 'gray', borderRadius: 20, color: 'white', paddingHorizontal: 20}}
+                    style={{borderWidth: 1, borderColor: 'gray', marginTop: 20, height: 50, backgroundColor: '#F5F4F2', borderRadius: 30, color: 'purple', paddingHorizontal: 20}}
                     onChangeText={(password) => this.setState({password})}
                     placeholder="masukkan password anda"
-                    placeholderTextColor="red"
+                    placeholderTextColor="gray"
                 />
-                <View style={{alignItems: 'center'}}>
-                    <TouchableOpacity onPress={() => this.Daftar(this.state.email, this.state.password)} style={{borderColor: 'red', borderWidth: 1, marginTop: 10, borderRadius: 15, backgroundColor: '#E64A19', width: 150}}>
-                            <Text style={{padding: 10, textAlign: 'center', justifyContent: 'center', fontSize: 20, fontWeight: 'bold', color: 'purple', textTransform: 'uppercase'}}>DAFTAR</Text>
+                <View style={{alignItems: 'center', marginTop: 22}}>
+                    <TouchableOpacity onPress={() => this.Daftar(this.state.email, this.state.password)} style={{borderColor: '#241C1C', borderWidth: 1, borderRadius: 40, backgroundColor: '#241C1C', width: 150, alignItems: 'center'}}>
+                            <Text style={{padding: 10, textAlign: 'center', justifyContent: 'center', fontSize: 20, fontWeight: 'bold', color: '#F5F4F2', textTransform: 'uppercase'}}>DAFTAR</Text>
                     </TouchableOpacity>
                 </View>
 
