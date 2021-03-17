@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Alert, ScrollView } from 'react-native'
 import * as firebase from 'firebase';
+import Vector from '../../Assets/svg/Vector.svg';
 
 const firebaseConfig = {
     apiKey: "AIzaSyDkA-w5hf8r9UTIKgxXkqwfZjeO6j8fnqc",
@@ -49,7 +50,10 @@ export class Daftar extends Component {
     render() {
         return (
             <ScrollView style={{paddingHorizontal: 28, paddingTop: 25, backgroundColor: '#C4C4C4'}}>
-                <View style={{width: 29, height: 29, backgroundColor: 'pink'}}>
+                <View style={{width: 29, height: 29}}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Auth')}>
+                        <Vector />
+                    </TouchableOpacity>
                 </View>
                 <Text style={{fontSize: 36, color: "#7B1FA2", fontWeight: 'bold', textAlign: 'center',marginTop: 60}}>Sign Up</Text>
                 <TextInput 
@@ -64,7 +68,7 @@ export class Daftar extends Component {
                     placeholder="masukkan password anda"
                     placeholderTextColor="gray"
                 />
-                <View style={{alignItems: 'center', marginTop: 22}}>
+                <View style={{alignItems: 'center', marginTop: 22, height: 55}}>
                     <TouchableOpacity onPress={() => this.Daftar(this.state.email, this.state.password)} style={{borderColor: '#241C1C', borderWidth: 1, borderRadius: 40, backgroundColor: '#241C1C', width: 150, alignItems: 'center'}}>
                             <Text style={{padding: 10, textAlign: 'center', justifyContent: 'center', fontSize: 20, fontWeight: 'bold', color: '#F5F4F2', textTransform: 'uppercase'}}>DAFTAR</Text>
                     </TouchableOpacity>
