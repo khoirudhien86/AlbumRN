@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, ScrollView, ActivityIndicator, BackHandler } from 'react-native'
 import * as firebase from 'firebase';
 import Vector from '../../Assets/svg/Vector.svg';
 
@@ -23,8 +23,15 @@ export class Login extends Component {
 
         this.state = ({
             email:'',
-            password:''
+            password:'',
         })
+    }
+
+    componentDidMount(){
+        BackHandler.addEventListener('hardwareBackPress', ()=> true)
+        return()=> {
+            BackHandler.addEventListener('hardwareBackPress', ()=> true)
+        }
     }
 
     Login = (email, password) => {

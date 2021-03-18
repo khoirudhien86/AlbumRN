@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TextInput, TouchableOpacity, Alert, ScrollView } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, Alert, ScrollView, BackHandler } from 'react-native'
 import * as firebase from 'firebase';
 import Vector from '../../Assets/svg/Vector.svg';
 
@@ -25,6 +25,13 @@ export class Daftar extends Component {
             email:'',
             password:'',
         })
+    }
+
+    componentDidMount(){
+        BackHandler.addEventListener('hardwareBackPress', ()=> true)
+        return()=> {
+            BackHandler.addEventListener('hardwareBackPress', ()=> true)
+        }
     }
 
     Daftar = (email,password) => {
