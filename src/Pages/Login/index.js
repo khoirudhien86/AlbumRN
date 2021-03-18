@@ -30,7 +30,7 @@ export class Login extends Component {
     Login = (email, password) => {
         try {
             firebase.auth().signInWithEmailAndPassword(email, password)
-            .then(()=> this.props.navigation.navigate('Home'))
+            .then(()=> this.props.navigation.navigate('MainApp'))
             // .then(function (user) {
             //     console.log(user);
             // });
