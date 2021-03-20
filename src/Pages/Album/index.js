@@ -1,12 +1,34 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
+import { AlbumList } from '../../Components'
 
 const Album = () => {
     return (
-        <View>
-            <Text>album Page</Text>
+        <View style={styles.container}>
+            <View style={styles.textContainer}>
+                <Text style={{fontSize: 20, fontWeight: 'bold', color: '#FFA000'}}>Albums</Text>
+            </View>
+            <View style={styles.albumListContainer}>
+                <AlbumList />
+            </View>
         </View>
     )
 }
 
-export default Album
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: 'grey',
+      padding: 10,
+      paddingBottom: 76
+    },
+    textContainer: {  
+      alignItems: 'center'
+    },
+    albumListContainer: {
+        marginTop: 15,
+        paddingBottom: 20
+    }
+});
+
+export default Album;

@@ -1,12 +1,12 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-const Akun = () => {
+const Info = () => {
     return (
         <View>
-            <Text>akun page</Text>
+            <Text>info page</Text>
         </View>
     )
 }
 
-export default Akun
+export default Info

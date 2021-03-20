@@ -11,19 +11,21 @@ const AlbumList = () => {
 
     const renderItem = ({item}) => {
         return(
-            <View style={styles.Card}>
-                <View style={styles.CardSection}>
-                    <View style={{marginRight: 10}}>
-                        <Image style={{height:60, width: 60}} source={{uri: item.avatar }} />
+            <View style={{paddingBottom: 10}}>
+                <View style={styles.Card}>
+                    <View style={styles.CardSection}>
+                        <View style={{marginRight: 10}}>
+                            <Image style={{height:60, width: 60}} source={{uri: item.avatar }} />
+                        </View>
+                        <View>
+                            <Text>{item.first_name} {item.last_name}</Text>
+                            <Text>{item.email}</Text>
+                        </View>
                     </View>
-                    <View>
-                        <Text>{item.first_name} {item.last_name}</Text>
-                        <Text>{item.email}</Text>
-                    </View>
-                </View>
-                <View style={styles.CardSection}>
-                    <View>
-                        <Image style={{height: 300,width: 285}} source={{uri: item.avatar}} />
+                    <View style={styles.CardSection}>
+                        <View>
+                            <Image style={{height: 300,width: 285}} source={{uri: item.avatar}} />
+                        </View>
                     </View>
                 </View>
             </View>
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 1,
         elevation: 1,
-        marginTop: 15
+        marginTop: 15,
     },
     CardSection: {
         borderBottomWidth: 1,
